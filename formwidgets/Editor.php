@@ -55,8 +55,11 @@ class Editor extends FormWidgetBase
         if ($editor == 'tinymce') {
             $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/tinymce/tinymce.min.js');
 
-            if ($locale != 'en' && File::exists('plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/tinymce/langs/'.$locale.'.js')) {
-                $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/tinymce/langs/'.$locale.'.js');
+            if ($locale != 'en' && File::exists('plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/tinymce/langs/' . $locale . '.js')) {
+                $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/tinymce/langs/' . $locale . '.js');
+            }
+            else {
+                App::setLocale('en');
             }
         }
 
@@ -64,8 +67,11 @@ class Editor extends FormWidgetBase
             $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/ckeditor.js');
             $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/adapters/jquery.js');
 
-            if ($locale != 'en' && File::exists('plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/lang/'.$locale.'.js')) {
-                $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/lang/'.$locale.'.js');
+            if ($locale != 'en' && File::exists('plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/lang/' . $locale . '.js')) {
+                $this->addJs('/plugins/anandpatel/wysiwygeditors/formwidgets/editor/assets/ckeditor/lang/' . $locale . '.js');
+            }
+            else {
+                App::setLocale('en');
             }
         }
 
